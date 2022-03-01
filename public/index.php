@@ -19,7 +19,7 @@ use App\core\Router;
 
 $router = new Router();
 /************ Routes *************/
-$router->register('/post/#id', '\App\controller\TestController::index');
+$router->register('/', '\App\controller\DefaultController::index');
 
 /************ /Routes *************/
 $router->run();
