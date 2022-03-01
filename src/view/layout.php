@@ -30,7 +30,7 @@
                             <button type="button" class="btn btn-light" id="accueil"><a class="nav-link"
                                     href="./">Accueil</a></button>
                         </li>
-                        <li style="margin-left:70%">
+                        <li style="margin-left:60%">
                             <div class="d-inline">
                                 <form class="form-inline d-inline-flex ">
                                     <div class="form-group mb-2">
