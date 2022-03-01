@@ -19,6 +19,8 @@ use App\core\Router;
 
 $router = new Router();
 /************ Routes *************/
+
+$router->register('/dashboard', '\App\controller\UserController::dashboard');
 $router->register('/', '\App\controller\DefaultController::index');
 
 /************ /Routes *************/
