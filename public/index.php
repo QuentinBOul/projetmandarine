@@ -20,8 +20,9 @@ use App\core\Router;
 $router = new Router();
 /************ Routes *************/
 
-$router->register('/dashboard', '\App\controller\UserController::dashboard');
 $router->register('/', '\App\controller\DefaultController::index');
+$router->register('/dashboard', '\App\controller\UserController::dashboard');
+
 
 /************ /Routes *************/
 $router->run();
