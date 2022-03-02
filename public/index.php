@@ -18,13 +18,23 @@ define('BASE_URI', $config['base_uri']);
 use App\core\Router;
 
 $router = new Router();
-/************ Routes *************/
 
+
+// Routes Default
 $router->register('/', '\App\controller\DefaultController::index');
-$router->register('/dashboard', '\App\controller\UserController::dashboard');
+
+// Routes Gestion Commerciale
+$router->register('/dashboard1', '\App\controller\UserController::dashboard_com');
+$router->register('/clients', '\App\controller\UserController::clients');
+$router->register('/contacts', '\App\controller\UserController::contacts');
+
+// Routes Gestion des Projets
+$router->register('/dashboard2', '\App\controller\UserController::dashboard_project');
+
+// Routes Gestion RH
+$router->register('/dashboard3', '\App\controller\UserController::dashboard_rh');
 
 
-/************ /Routes *************/
 $router->run();
 
-/**Commentaire test kevin */
+
