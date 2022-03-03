@@ -209,13 +209,13 @@ class Clients extends Model
 
 
     // Méthodes récupérations données
-    public function getAll()
+    public function getAllClients()
     {
         $clients = Dao::getMany(self::class);
         return $clients;
     }
 
-    public function getOneById(int $id_client)
+    public function getOneByIdClient(int $id_client)
     {
         $clients = Dao::getOne(self::class,
             [
