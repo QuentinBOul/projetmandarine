@@ -10,8 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js" defer></script>
-    <link rel="stylesheet" href="../../style.css">
-    <script src="../../main.js" defer></script>
+    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <script src="../../public/assets/js/main.js" defer></script>
     <title>Projet Mandarine</title>
 
 </head>
