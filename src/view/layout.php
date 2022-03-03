@@ -34,16 +34,16 @@
                         </li>
                         <li style="margin-left:60%">
                             <div class="d-inline">
-                                <form class="form-inline d-inline-flex ">
+                                <form class="form-inline d-inline-flex " action="" method="post">
                                     <div class="form-group mb-2">
-                                        <label for="staticEmail2" class="sr-only">Email</label>
+                                        <label for="staticEmail2" class="sr-only">Username</label>
                                         <input type="text" class="form-control" id="staticEmail2"
-                                            value="email@example.com">
+                                            value="username" name="username">
                                     </div>
                                     <div class="form-group mx-sm-3 mb-2">
                                         <label for="inputPassword2" class="sr-only">Password</label>
                                         <input type="password" class="form-control" id="inputPassword2"
-                                            placeholder="Password">
+                                            placeholder="password" name="password">
                                     </div>
                                     <button type="submit" class="btn btn-primary mb-2">Login</button>
                                 </form>
