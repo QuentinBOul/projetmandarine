@@ -23,7 +23,7 @@ $id = implode($_GET);
 
 
 // Routes Default
-$router->register('/', '\App\controller\DefaultController::index');
+$router->register('/', '\App\controller\UserController::login');
 
 // Routes Gestion Commerciale
 
