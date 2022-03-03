@@ -31,6 +31,7 @@ $router->register('/dashboard1', '\App\controller\UserController::dashboard_com'
 $router->register('/clients', '\App\controller\UserController::clients');
 $router->register('/contacts', '\App\controller\UserController::contacts');
 $router->register('/clientProfil='.$id, '\App\controller\UserController::clientProfil');
+$router->register('/contactProfil='.$id, '\App\controller\UserController::contactProfil');
 
 // Routes Gestion des Projets
 $router->register('/dashboard2', '\App\controller\UserController::dashboard_project');
