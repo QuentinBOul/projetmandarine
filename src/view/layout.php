@@ -58,10 +58,10 @@
 
     <?= $content ?>
 
-    <footer class="text-center"
+    <!-- <footer class="text-center"
         style="width: 100%; height: 100px; background-color: gray; position: absolute; bottom: 0;">
         <h1>footer</h1>
-    </footer>
+    </footer> -->
 
 </body>
 
