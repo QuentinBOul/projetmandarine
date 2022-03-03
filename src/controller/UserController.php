@@ -29,6 +29,17 @@ class UserController extends Controller
 
         $this->renderView('user/gestion_commerciale/contacts');
     }
+
+    /*
+    public function showTest()
+    {
+        $test = (new Contacts())->getOneById(1);
+
+        $this->renderView('user/gestion_commerciale/test', [
+            'test' => $test
+        ]);
+    }
+    */
 }
 
 ?>

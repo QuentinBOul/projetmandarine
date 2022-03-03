@@ -158,18 +158,20 @@ class Contacts extends Model
 
 
     // Méthodes récupérations données
-    /*public function getAll()
+    /*
+    public function getAll()
     {
-        $clients = Dao::getMany(self::class);
-        return $clients;
+        $contacts = Dao::getMany(self::class);
+        return $contacts;
     }
 
     public function getOneById(int $id_client)
     {
-        $clients = Dao::getOne(self::class,
+        $contacts = Dao::getOne(self::class,
             [
-                'id' => $id
+                'id' => $id_client
             ]);
-        return $clients;
-    }*/
+        return $contacts;
+    }
+    */
 }
