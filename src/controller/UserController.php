@@ -1,7 +1,9 @@
 <?php 
 
 namespace App\controller;
+
 use App\core\Controller;
+use App\model\Clients;
 
 class UserController extends Controller
 {
@@ -20,26 +22,27 @@ class UserController extends Controller
         $this->renderView('user/gestion_RH/dashboard');
     }
 
+    public function clientProfil(){
+        $id = $_GET["clientProfil"];
+        $client = (new Clients())->getOneById($id);
+        $this->renderView('user/gestion_commerciale/clientProfil', [
+            'client' => $client
+        ]);
+    }
+
     public function clients(){
 
-        $this->renderView('user/gestion_commerciale/clients');
+        $clients = (new Clients())->getAll();
+        $this->renderView('user/gestion_commerciale/clients', [
+            'clients' => $clients
+        ]);
     }
 
     public function contacts(){
 
         $this->renderView('user/gestion_commerciale/contacts');
     }
-
-    /*
-    public function showTest()
-    {
-        $test = (new Contacts())->getOneById(1);
-
-        $this->renderView('user/gestion_commerciale/test', [
-            'test' => $test
-        ]);
-    }
-    */
+    
 }
 
 ?>
