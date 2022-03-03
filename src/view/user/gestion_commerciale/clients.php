@@ -11,40 +11,20 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-            <td>4</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-            <td>Row 1 Data 2</td>
-        </tr>
+        <?php foreach ($clients as $client) : ?>        
+            <tr>
+                <td><?= htmlspecialchars($client->getId_client()) ?></td>
+                <td><?= htmlspecialchars($client->getId_sect()) ?></td>
+                <td><?= htmlspecialchars($client->getRaison_sociale()) ?></td>
+                <td><?= htmlspecialchars($client->getCode_postal_client()) ?></td>
+                <td><?= htmlspecialchars($client->getVille_client()) ?></td>
+                <td>
+                    <form action="<?="clientProfil=" . htmlspecialchars($client->getId_client())?>" method="get">
+                        <button type="submit" class="button btn btn-secondary">></a>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 

@@ -19,14 +19,18 @@ use App\core\Router;
 
 $router = new Router();
 
+$id = implode($_GET);
+
 
 // Routes Default
 $router->register('/', '\App\controller\DefaultController::index');
 
 // Routes Gestion Commerciale
+
 $router->register('/dashboard1', '\App\controller\UserController::dashboard_com');
 $router->register('/clients', '\App\controller\UserController::clients');
 $router->register('/contacts', '\App\controller\UserController::contacts');
+$router->register('/clientProfil='.$id, '\App\controller\UserController::clientProfil');
 
 // Routes Gestion des Projets
 $router->register('/dashboard2', '\App\controller\UserController::dashboard_project');
