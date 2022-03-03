@@ -98,4 +98,28 @@ class Users extends Model
         return $contacts;
     }
     */
+    
+    public function getOneByUsername(string $login_user) : ?Users{
+        $user = Dao::getOne(self::class , ['login_user' => $login_user]);
+        if ($user == false)
+        {
+            $user = null;
+        }
+        return $user;
+    }
+
+    public function getOneByRole(string $role) : ?Users{
+        $role = Dao::getOne(self::class , ['role' => $role]);
+        if ($role == false)
+        {
+            $role = null;
+        }
+        return $role;
+    }
+
+    public function beforeInsertInSession()
+    {
+        unset($this->password);
+    }
+
 }
