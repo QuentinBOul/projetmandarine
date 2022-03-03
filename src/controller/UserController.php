@@ -3,11 +3,46 @@
 namespace App\controller;
 
 use App\core\Controller;
+use App\model\Users;
 use App\model\Clients;
 use App\model\Contacts;
 
 class UserController extends Controller
 {
+
+    public function login(){
+
+        if (strtolower($_SERVER['REQUEST_METHOD']) == 'get') {
+            $this->renderView('default/index');
+        } elseif (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+            if (isset($_POST['username']) && isset($_POST['password'])) {
+                $user = (new Users())->getOneByUsername($_POST['username']);
+                if (is_null($user)) {
+                    $this->renderView('default/index', [
+                        'error' => "L'utilisateur n'existe pas"
+                    ]);
+                    return;
+                }
+                if ($_POST['password'] == $user->getPassUser()) {
+                    
+                    session_start();
+                    $_SESSION['isLogged'] = true;
+                    $user->beforeInsertInSession();
+                    $_SESSION['user'] = $user;
+
+                    // redirection vers dashboard1 (temporairement)
+                    $this->redirectToRoute('dashboard1');
+                } else {
+                    $this->renderView('default/index', [
+                        'error' => "Mauvais mot de passe !"
+                    ]);
+                    return;
+                }
+            }
+        }
+
+    }
+    
     public function dashboard_com(){
 
         $this->renderView('user/gestion_commerciale/dashboard');
