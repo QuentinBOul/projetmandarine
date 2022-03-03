@@ -1,4 +1,5 @@
 <h1 class="text-center my-5">Liste des clients</h1>
+<a href="addClient" class="btn btn-primary mx-5 my-3" style="float: right;">Ajouter un client</a>
 
 
 <div class="m-5">

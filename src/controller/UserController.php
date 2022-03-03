@@ -23,6 +23,8 @@ class UserController extends Controller
         $this->renderView('user/gestion_RH/dashboard');
     }
 
+
+    //Affichage des clients
     public function clientProfil(){
 
         $id = $_GET["clientProfil"];
@@ -40,6 +42,14 @@ class UserController extends Controller
         ]);
     }
 
+    public function addClient(){
+
+        //$clients = (new Clients())->getAllClients();
+        $this->renderView('user/gestion_commerciale/addClient');
+    }
+
+
+     //Affichage des contacts
     public function contactProfil(){
 
         $id = $_GET["contactProfil"];
