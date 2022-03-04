@@ -1,5 +1,9 @@
 <h1 class="text-center">Ajouter un Client</h1>
 
+<div>
+  <a href="clients" class="btn btn-secondary mx-5 my-3" style="float: left;">Retour</a>
+</div>
+
 <div class="container col-md-6 my-5" id="formClient">
     <form action="addClient" method="POST">
         <div class="form-group my-2">

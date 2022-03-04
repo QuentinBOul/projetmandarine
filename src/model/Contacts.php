@@ -8,15 +8,15 @@ use App\core\Dao;
 
 class Contacts extends Model
 {
-    private $id_contact;
-    private $id_client;
-    private $id_fonc;
-    private $nom_contact;
-    private $prenom_contact;
-    private $tel_contact;
-    private $email_contact;
-    private $photo;
-    private $duree;
+    private int $id_contact;
+    private int $id_client;
+    private int $id_fonc;
+    private string $nom_contact;
+    private string $prenom_contact;
+    private string $tel_contact;
+    private string $email_contact;
+    private string $photo;
+    private int $duree;
 
 
 
@@ -172,5 +172,13 @@ class Contacts extends Model
                 'id_contact' => $id_contact
             ]);
         return $contacts;
+    }
+
+    
+    // Méthode ajout données
+
+    public function setContact()
+    {
+        Dao::insertOne($this, get_object_vars($this));
     }
 }

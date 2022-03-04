@@ -34,6 +34,10 @@ $router->register('/clientProfil='.$id, '\App\controller\UserController::clientP
 $router->register('/contactProfil='.$id, '\App\controller\UserController::contactProfil');
 $router->register('/formClient', '\App\controller\UserController::formClient');
 $router->register('/addClient', '\App\controller\UserController::addClient');
+$router->register('/formContact', '\App\controller\UserController::formContact');
+$router->register('/addContact', '\App\controller\UserController::addContact');
+$router->register('/editClient', '\App\controller\UserController::editClient');
+$router->register('/editContact', '\App\controller\UserController::editContact');
 
 // Routes Gestion des Projets
 $router->register('/dashboard2', '\App\controller\UserController::dashboard_project');

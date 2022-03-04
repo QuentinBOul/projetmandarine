@@ -64,7 +64,7 @@ class UserController extends Controller
 
         $id = $_GET["clientProfil"];
         $client = (new Clients())->getOneByIdClient($id);
-        $this->renderView('user/gestion_commerciale/clientProfil', [
+        $this->renderView('user/gestion_commerciale/profil/clientProfil', [
             'client' => $client
         ]);
     }
@@ -79,7 +79,7 @@ class UserController extends Controller
 
     public function formClient(){
 
-        $this->renderView('user/gestion_commerciale/formClient');
+        $this->renderView('user/gestion_commerciale/formulaire/formClient');
         
     }
 
@@ -104,13 +104,19 @@ class UserController extends Controller
         $this->redirectToRoute('clients');
     }
 
+    public function editClient(){
+
+        $this->renderView('user/gestion_commerciale/edit/editClient');
+
+    }
+
 
      //Affichage des contacts
     public function contactProfil(){
 
         $id = $_GET["contactProfil"];
         $contact = (new Contacts())->getOneByIdContact($id);
-        $this->renderView('user/gestion_commerciale/contactProfil', [
+        $this->renderView('user/gestion_commerciale/profil/contactProfil', [
             'contact' => $contact
         ]);
     }
@@ -121,6 +127,36 @@ class UserController extends Controller
         $this->renderView('user/gestion_commerciale/contacts', [
             'contacts' => $contacts
         ]);
+    }
+
+    public function formContact(){
+
+        $this->renderView('user/gestion_commerciale/formulaire/formContact');
+        
+    }
+
+    public function addContact(){
+
+        if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+            $newContact = new Contacts();
+            $newContact->setId_client($_POST['idClient']);
+            $newContact->setId_fonc($_POST['fonction']);
+            $newContact->setNom_contact($_POST['nom']);
+            $newContact->setPrenom_contact($_POST['prenom']);
+            $newContact->setTel_contact($_POST['tel']);
+            $newContact->setEmail_contact($_POST['email']);
+            $newContact->setPhoto($_POST['photo']);
+            $newContact->setDuree($_POST['duree']);
+            $newContact->setContact();
+        }
+
+        $this->redirectToRoute('contacts');
+    }
+
+    public function editContact(){
+
+        $this->renderView('user/gestion_commerciale/edit/editContact');
+                
     }
     
 }

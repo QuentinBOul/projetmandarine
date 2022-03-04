@@ -3,6 +3,9 @@
 <div>
     <a href="dashboard1" class="btn btn-secondary mx-5 my-3" style="float: left;">Retour</a>
 </div>
+<div>
+    <a href="formContact" class="btn btn-success mx-5 my-3" style="float:right;">Ajouter un contact</a>
+</div>
 
 <div class="m-5">
     <table id="test" class="display text-center">

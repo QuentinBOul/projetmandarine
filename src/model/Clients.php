@@ -209,6 +209,7 @@ class Clients extends Model
 
 
     // Méthodes récupérations données
+
     public function getAllClients()
     {
         $clients = Dao::getMany(self::class);
@@ -224,7 +225,9 @@ class Clients extends Model
         return $clients;
     }
 
+
     // Méthode ajout données
+    
     public function setClient()
     {
         Dao::insertOne($this, get_object_vars($this));
