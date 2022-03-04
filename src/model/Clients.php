@@ -8,18 +8,18 @@ use App\core\Dao;
 
 class Clients extends Model
 {
-    private $id_client;
-    private $id_sect;
-    private $raison_sociale;
-    private $adresse_client;
-    private $code_postal_client;
-    private $ville_client;
-    private $ca;
-    private $effectif;
-    private $telephone_client;
-    private $type_client;
-    private $nature_client;
-    private $commentaire_client;
+    private int $id_client;
+    private int $id_sect;
+    private string $raison_sociale;
+    private string $adresse_client;
+    private string $code_postal_client;
+    private string $ville_client;
+    private int $ca;
+    private int $effectif;
+    private string $telephone_client;
+    private string $type_client;
+    private string $nature_client;
+    private string $commentaire_client;
 
 
 
@@ -222,5 +222,11 @@ class Clients extends Model
                 'id_client' => $id_client
             ]);
         return $clients;
+    }
+
+    // Méthode ajout données
+    public function setClient()
+    {
+        Dao::insertOne($this, get_object_vars($this));
     }
 }

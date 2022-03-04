@@ -77,10 +77,31 @@ class UserController extends Controller
         ]);
     }
 
+    public function formClient(){
+
+        $this->renderView('user/gestion_commerciale/formClient');
+        
+    }
+
     public function addClient(){
 
-        //$clients = (new Clients())->getAllClients();
-        $this->renderView('user/gestion_commerciale/addClient');
+        if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+            $newClient = new Clients();
+            $newClient->setId_sect($_POST['secteur']);
+            $newClient->setRaison_sociale($_POST['raisonSociale']);
+            $newClient->setAdresse_client($_POST['adresse']);
+            $newClient->setCode_postal_client($_POST['codePostal']);
+            $newClient->setVille_client($_POST['ville']);
+            $newClient->setCa($_POST['ca']);
+            $newClient->setEffectif($_POST['effectif']);
+            $newClient->setTelephone_client($_POST['tel']);
+            $newClient->setType_client($_POST['type']);
+            $newClient->setNature_client($_POST['nature']);
+            $newClient->setCommentaire_client($_POST['com']);
+            $newClient->setClient();
+        }
+
+        $this->redirectToRoute('clients');
     }
 
 
@@ -103,5 +124,3 @@ class UserController extends Controller
     }
     
 }
-
-?>
