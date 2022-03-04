@@ -133,7 +133,8 @@ final class Dao
 
         $stmt->execute($object_to_array);
 
-        return self::$cnx->lastInsertId();
+        $id = self::$cnx->lastInsertId();
+        return (intval($id));
     }
 
     // TODO
