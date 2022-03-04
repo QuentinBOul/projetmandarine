@@ -108,18 +108,9 @@ class Users extends Model
         return $user;
     }
 
-    public function getOneByRole(string $role) : ?Users{
-        $role = Dao::getOne(self::class , ['role' => $role]);
-        if ($role == false)
-        {
-            $role = null;
-        }
-        return $role;
-    }
-
     public function beforeInsertInSession()
     {
-        unset($this->password);
+        unset($this->pass_user);
     }
 
 }
