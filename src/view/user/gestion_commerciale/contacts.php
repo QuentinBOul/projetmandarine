@@ -1,5 +1,9 @@
 <h1 class="text-center my-5">Liste des contacts</h1>
 
+<div>
+    <a href="dashboard1" class="btn btn-secondary mx-5 my-3" style="float: left;">Retour</a>
+</div>
+
 <div class="m-5">
     <table id="test" class="display text-center">
         <thead>
