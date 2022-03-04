@@ -30,8 +30,23 @@ class UserController extends Controller
                     $user->beforeInsertInSession();
                     $_SESSION['user'] = $user;
 
-                    // redirection vers dashboard1 (temporairement)
-                    $this->redirectToRoute('dashboard1');
+                    if ($_SESSION['user']->getRole() == "com"){
+
+                        // redirection vers dashboard com
+                        $this->redirectToRoute('dashboard1'); 
+
+                    } else if ($_SESSION['user']->getRole() == "dev"){
+
+                        // redirection vers dashboard dev
+                        $this->redirectToRoute('dashboard2');
+
+                    } else{
+
+                        // redirection vers dashboard rh
+                        $this->redirectToRoute('dashboard3');
+
+                    }
+
                 } else {
                     $this->renderView('default/index', [
                         'error' => "Mauvais mot de passe !"
