@@ -62,7 +62,7 @@ class UserController extends Controller
 
         session_start();
         session_destroy();
-        $this->login();
+        $this->redirectToRoute('');
 
     }
     
