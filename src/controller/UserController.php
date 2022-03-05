@@ -57,6 +57,14 @@ class UserController extends Controller
         }
 
     }
+
+    public function logout(){
+
+        session_start();
+        session_destroy();
+        $this->login();
+
+    }
     
     public function dashboard_com(){
 

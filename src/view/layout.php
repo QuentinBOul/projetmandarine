@@ -40,11 +40,20 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" action="" method="post">
-                    <input class="form-control me-2" type="text" placeholder="Username" name="username" />
-                    <input class="form-control me-2" type="password" placeholder="Password" name="password" />
-                    <button class="btn btn-primary" type="submit">Login</button>
-                </form>
+                <?php
+                session_start();
+                if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true ){
+                    echo '<span id="bjrconnect"> Bienvenue ', $_SESSION['user']->getLoginUser(), '</span>';
+                    echo  '<a href="/logout"><button class="btn btn-warning" type="submit">Logout</button></a>';
+                }else{
+                    echo '<form class="d-flex" action="" method="post">';
+                    echo '<input class="form-control me-2" type="text" placeholder="Username" name="username" />';
+                    echo '<input class="form-control me-2" type="password" placeholder="Password" name="password" />';
+                    echo  '<button class="btn btn-primary" type="submit">Login</button>';
+                    echo "</form>";
+                    
+                }
+                ?>
             </div>
         </div>
     </nav>

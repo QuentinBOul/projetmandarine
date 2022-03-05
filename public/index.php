@@ -24,6 +24,7 @@ $id = implode($_GET);
 
 // Routes Default
 $router->register('/', '\App\controller\UserController::login');
+$router->register('/logout', '\App\controller\UserController::logout');
 
 // Routes Gestion Commerciale
 
