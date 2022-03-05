@@ -6,4 +6,4 @@
     <?php endif; ?>
 </div>
 
-<h1>PAGE ACCUEIL</h1>
+<h1 class="text-center my-5">PAGE ACCUEIL</h1>

@@ -20,39 +20,34 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav" style=" width: 100%">
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-light" id="accueil"><a class="nav-link"
-                                    href="./">Accueil</a></button>
-                        </li>
-                        <li style="margin-left:60%">
-                            <div class="d-inline">
-                                <form class="form-inline d-inline-flex " action="" method="post">
-                                    <div class="form-group mb-2">
-                                        <label for="staticEmail2" class="sr-only">Username</label>
-                                        <input type="text" class="form-control" id="staticEmail2"
-                                            value="username" name="username">
-                                    </div>
-                                    <div class="form-group mx-sm-3 mb-2">
-                                        <label for="inputPassword2" class="sr-only">Password</label>
-                                        <input type="password" class="form-control" id="inputPassword2"
-                                            placeholder="password" name="password">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary mb-2">Login</button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./"><img src="./public/assets/img/abilogo.jpg" alt="logo" height="60%" width="60%"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mob-navbar">
+                <ul class="navbar-nav mb-3 mb-lg-0 mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Les Dashboards</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="dashboard1">Dashboard1 (com)</a></li>
+                            <li><a class="dropdown-item" href="dashboard2">Dashboard2 (dev)</a></li>
+                            <li><a class="dropdown-item" href="dashboard3">Dashboard3 (rh)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" action="" method="post">
+                    <input class="form-control me-2" type="text" placeholder="Username" name="username" />
+                    <input class="form-control me-2" type="password" placeholder="Password" name="password" />
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
             </div>
-        </nav>
+        </div>
+    </nav>
     </header>
     <hr>
 
