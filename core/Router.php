@@ -49,9 +49,8 @@ class Router
             }
         }
 
-            $exploded_defined_path = explode("/", $action['path']);
         foreach ($this->actions as $action) {
-
+            $exploded_defined_path = explode("/", $action['path']);
             // compare length
             if (count($exploded_defined_path) == count($exploded_request_uri)) {
 
