@@ -181,5 +181,49 @@ class UserController extends Controller
         $this->renderView('user/gestion_commerciale/edit/editContact');
                 
     }
+
+    //Affichage des users
+    public function userProfil(){
+
+        $id = $_GET["userProfil"];
+        $user = (new Users())->getOneUser($id);
+        $this->renderView('user/gestion_RH/userProfil', [
+            'user' => $user
+        ]);
+    }
+
+    public function usersList(){
+
+        $users = (new Users())->getAllUsers();
+        $this->renderView('user/gestion_RH/usersList', [
+            'users' => $users
+        ]);
+    }
+
+    public function formUser(){
+
+        $this->renderView('user/gestion_RH/formUser');
+        
+    }
+
+    public function addUser(){
+
+        if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+            $newUser = new Users();
+            $newUser->setIdUser($_POST['idUser']);
+            $newUser->setRole($_POST['fonction']);
+            $newUser->setLoginUser($_POST['nom']);
+            $newUser->setPassUser($_POST['prenom']);
+            
+        }
+
+        $this->redirectToRoute('users');
+    }
+
+    public function editUser(){
+
+        $this->renderView('user/gestion_RH/editUser');
+                
+    }
     
 }

@@ -44,9 +44,8 @@ $router->register('/editContact', '\App\controller\UserController::editContact')
 $router->register('/dashboard2', '\App\controller\UserController::dashboard_project');
 
 // Routes Gestion RH
-$router->register('/dashboard3', '\App\controller\UserController::dashboard_rh');
-
+$router->register('/dashboard3', '\App\controller\UserController::usersList');
+$router->register('/userProfil='.$id, '\App\controller\UserController::userProfil');
+$router->register('/formUser', '\App\controller\UserController::formUser');
 
 $router->run();
-
-

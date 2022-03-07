@@ -113,4 +113,28 @@ class Users extends Model
         unset($this->pass_user);
     }
 
-}
+        // Méthodes récupérations données
+    
+        public function getAllUsers()
+        {
+            $users = Dao::getMany(self::class);
+            return $users;
+        }
+    
+        public function getOneUser(int $id_user)
+        {
+            $users = Dao::getOne(self::class,
+                [
+                    'id_user' => $id_user
+                ]);
+            return $users;
+        }
+    
+        
+        // Méthode ajout données
+    
+        public function setUser()
+        {
+            Dao::insertOne($this, get_object_vars($this));
+        }
+    }
