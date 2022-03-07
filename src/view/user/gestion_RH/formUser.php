@@ -5,18 +5,22 @@
 </div>
 
 <div class="container col-md-6 my-5" id="formUser">
-    <form action="addUser" method="POST">
+    <form action="addUser" method="POST" class="needs-validation" novalidate
+        oninput='confirm_pass_user.setCustomValidity(pass_user.value != confirm_pass_user.value ? "Passwords do not match." : "")'>
         <div class="form-group my-2">
             <label for="login_user">Login</label>
             <input type="text" name="login_user" class="form-control" maxlength="32" id="login_user" required>
         </div>
         <div class="form-group my-2">
             <label for="pass_user">Mot de passe</label>
-            <input type="password" name="pass_user" class="form-control" maxlength="32" id="pass_user" required>
+            <input type="password" name="pass_user" class="pwd form-control" maxlength="32" id="pass_user" required>
         </div>
         <div class="form-group my-2">
             <label for="pass_user">Confirmez mot de passe</label>
-            <input type="password" name="pass_user" class="form-control" maxlength="32" id="confirm_pass_user" required>
+            <input type="password" name="confirm_pass_user" class="pwd form-control" maxlength="32"
+                id="confirm_pass_user" required>
+            <input type="checkbox" onclick="pwdToggle()"> Show Password
+
         </div>
         <div class="form-group my-2">
             <select class="form-select" aria-label="Default select example" name="role" id="role" required>

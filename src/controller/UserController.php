@@ -210,14 +210,13 @@ class UserController extends Controller
 
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newUser = new Users();
-            $newUser->setIdUser($_POST['idUser']);
-            $newUser->setRole($_POST['fonction']);
-            $newUser->setLoginUser($_POST['nom']);
-            $newUser->setPassUser($_POST['prenom']);
-            
+            $newUser->setRole($_POST['role']);
+            $newUser->setLoginUser($_POST['login_user']);
+            $newUser->setPassUser($_POST['pass_user']);
+            $newUser->setUser();
         }
 
-        $this->redirectToRoute('users');
+        $this->redirectToRoute('dashboard3');
     }
 
     public function editUser(){
