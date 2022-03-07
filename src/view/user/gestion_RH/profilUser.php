@@ -9,7 +9,7 @@
                         <tr>
                             <th scope="row">ID USER :</th>
                             <td>
-                                <input type="text" class="text-center" size="1" name="id_user"
+                                <input id="user_id" type="text" class="text-center" size="1" name="id_user"
                                     value="<?= htmlspecialchars($user->getIdUser()) ?>" readonly>
                             </td>
                         </tr>
@@ -44,6 +44,7 @@
                     <button type="submit" class="btn btn-warning mx-3 my-1">Modifier</button>
                     <a href="deleteUser?id_user=<?= $user->getIdUser() ?>"
                         class="btn btn-danger mx-3 my-1">Supprimer</a>
+                    <button class="btn btn-danger mx-3 my-1" onClick="deleteMsg(event)">Supprimer TEST</button>
                 </div>
             </form>
         </div>

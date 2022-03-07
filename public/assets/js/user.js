@@ -1,3 +1,4 @@
+("use strict");
 //show password text
 function pwdToggle() {
   var pwds = document.getElementsByClassName("pwd");
@@ -51,3 +52,36 @@ $(document).ready(function () {
     ],
   });
 });
+
+//confirmation suppression message
+
+function deleteMsg(event) {
+  event.preventDefault();
+  var id = document.getElementById("user_id").value;
+  swal({
+    title: "Etes vous sure?",
+    text: "Une fois supprimer il sera impossible de récupérer les informations!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      $.ajax({
+        url: "deleteUser",
+        type: "GET",
+        data: { id_user: id },
+        dataType: "text",
+        success: function () {
+          swal("Utilisateur supprimé avec succés", {
+            icon: "success",
+          }).then(() => {
+            window.location = "dashboard3";
+          });
+        },
+        error: function () {
+          swal("Echec de la suppression", { icon: "error" });
+        },
+      });
+    }
+  });
+}
