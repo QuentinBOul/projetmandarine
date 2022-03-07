@@ -34,15 +34,20 @@ function pwdToggle() {
   });
 })();
 
-//password confirmation matching
-
-/*var check = function () {
-  if (
-    document.getElementById("pass_user").value ==
-    document.getElementById("confirm_pass_user").value
-  ) {
-    document.getElementById("pass_user").classList.add = "green";
-  } else {
-    document.getElementById("pass_user").style.color = "red";
-  }
-};*/
+//Table ordering
+$(document).ready(function () {
+  $("#usersTable").DataTable({
+    columnDefs: [
+      {
+        // The `data` parameter refers to the data for the cell (defined by the
+        // `data` option, which defaults to the column being worked with, in
+        // this case `data: 0`.
+        render: function (data, type, row) {
+          return data;
+        },
+        targets: 0,
+      },
+      { visible: true, targets: [3] },
+    ],
+  });
+});
