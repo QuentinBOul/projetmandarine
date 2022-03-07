@@ -229,5 +229,56 @@ class UserController extends Controller
         $this->renderView('user/gestion_RH/deleteUser');
                 
     }
+
+    public function areYouDev(){
+
+        if($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'dev'){
+
+                
+                $this->renderView('default/index', [
+                    'error' => "Vous n'êtes pas connecté en temps que developpeur !"
+                ]);
+                $this->login();
+
+            }else{
+            
+                return;
+            
+            } 
+    }
+
+    public function areYouCom(){
+
+        if($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'com'){
+
+                
+                $this->renderView('default/index', [
+                    'error' => "Vous n'êtes pas connecté en temps que commercial !"
+                ]);
+                $this->login();
+
+            }else{
+            
+                return;
+            
+            } 
+    }
+
+    public function areYouRH(){
+
+        if($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'rh'){
+
+                
+                $this->renderView('default/index', [
+                    'error' => "Vous n'êtes pas connecté en temps que RH !"
+                ]);
+                $this->login();
+
+            }else{
+            
+                return;
+            
+            } 
+    }
     
 }
