@@ -25,28 +25,12 @@ class UserController extends Controller
                 }
                 if ($_POST['password'] == $user->getPassUser()) {
                     
-                    session_start();
                     $_SESSION['isLogged'] = true;
                     $user->beforeInsertInSession();
                     $_SESSION['user'] = $user;
-
-                    if ($_SESSION['user']->getRole() == "com"){
-
-                        // redirection vers dashboard com
-                        $this->redirectToRoute('dashboard1'); 
-
-                    } else if ($_SESSION['user']->getRole() == "dev"){
-
-                        // redirection vers dashboard dev
-                        $this->redirectToRoute('dashboard2');
-
-                    } else{
-
-                        // redirection vers dashboard rh
-                        $this->redirectToRoute('dashboard3');
-
-                    }
-
+                    echo '<script type="text/javascript">alert("Vous êtes bien connecté !")</script>';
+                    echo "<script>setTimeout(\"location.href = '';\",300);</script>";
+                    
                 } else {
                     $this->renderView('default/index', [
                         'error' => "Mauvais mot de passe !"
@@ -60,7 +44,6 @@ class UserController extends Controller
 
     public function logout(){
 
-        session_start();
         session_destroy();
         $this->redirectToRoute('');
 

@@ -20,6 +20,7 @@ use App\core\Router;
 $router = new Router();
 
 $id = implode($_GET);
+session_start();
 
 
 // Routes Default

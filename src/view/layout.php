@@ -51,7 +51,6 @@
                         </li>
                     </ul>
                     <?php
-                session_start();
                 if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true ){
                     echo '<span id="bjrconnect"> Bienvenue ', $_SESSION['user']->getLoginUser(), '</span>';
                     echo  '<a href="./logout"><button class="btn btn-warning" type="submit">Logout</button></a>';
