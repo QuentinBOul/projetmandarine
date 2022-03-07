@@ -49,6 +49,14 @@
                                 <li><a class="dropdown-item" href="dashboard3">Dashboard3 (rh)</a></li>
                             </ul>
                         </li>
+                        <?php
+                            if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'com' ){
+                            echo '<a class="nav-link active" aria-current="page" href="./dashboard1">Dashboard</a>';}
+                            if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'dev' ){
+                            echo '<a class="nav-link active" aria-current="page" href="./dashboard2">Dashboard</a>';}
+                            if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'rh' ){
+                            echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Dashboard</a>';}
+                        ?>
                     </ul>
                     <?php
                 if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true ){
