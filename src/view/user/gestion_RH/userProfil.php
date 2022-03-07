@@ -17,7 +17,7 @@
                             <th scope="row">Fonction :</th>
                             <td>
                                 <select class="form-select" aria-label="Default select example"
-                                    value="<?= htmlspecialchars($user->getRole()) ?>">
+                                    value="<?= htmlspecialchars($user->getRole()) ?>" name="role">
                                     <option value="rh">Ressources humaine</option>
                                     <option value="dev">Développeur</option>
                                     <option value="com">Commerciale</option>

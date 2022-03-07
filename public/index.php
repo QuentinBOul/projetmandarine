@@ -48,5 +48,6 @@ $router->register('/dashboard3', '\App\controller\UserController::usersList');
 $router->register('/userProfil='.$id, '\App\controller\UserController::userProfil');
 $router->register('/formUser', '\App\controller\UserController::formUser');
 $router->register('/addUser', '\App\controller\UserController::addUser');
+$router->register('/editUser', '\App\controller\UserController::editUser');
 
 $router->run();
