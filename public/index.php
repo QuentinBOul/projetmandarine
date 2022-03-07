@@ -45,9 +45,11 @@ $router->register('/dashboard2', '\App\controller\UserController::dashboard_proj
 
 // Routes Gestion RH
 $router->register('/dashboard3', '\App\controller\UserController::usersList');
-$router->register('/userProfil='.$id, '\App\controller\UserController::userProfil');
+$router->register('/profilUser='.$id, '\App\controller\UserController::profilUser');
 $router->register('/formUser', '\App\controller\UserController::formUser');
 $router->register('/addUser', '\App\controller\UserController::addUser');
 $router->register('/editUser', '\App\controller\UserController::editUser');
+$router->register('/deleteUser', '\App\controller\UserController::deleteUser');
+
 
 $router->run();

@@ -42,7 +42,8 @@
                 </table>
                 <div class="text-center">
                     <button type="submit" class="btn btn-warning mx-3 my-1">Modifier</button>
-                    <button class="btn btn-danger mx-3 my-1">Supprimer</button>
+                    <a href="deleteUser?id_user=<?= $user->getIdUser() ?>"
+                        class="btn btn-danger mx-3 my-1">Supprimer</a>
                 </div>
             </form>
         </div>

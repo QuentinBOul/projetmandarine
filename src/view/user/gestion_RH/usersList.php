@@ -29,7 +29,7 @@
             } ?>
                 </td>
                 <td>
-                    <form action="<?= "userProfil=" . htmlspecialchars($user->getIdUser()) ?>" method="get">
+                    <form action="<?= "profilUser=" . htmlspecialchars($user->getIdUser()) ?>" method="get">
                         <button type="submit" class="button btn btn-secondary">></a>
                     </form>
                 </td>

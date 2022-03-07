@@ -183,11 +183,11 @@ class UserController extends Controller
     }
 
     //Affichage des users
-    public function userProfil(){
+    public function profilUser(){
 
-        $id = $_GET["userProfil"];
+        $id = $_GET["profilUser"];
         $user = (new Users())->getOneUser($id);
-        $this->renderView('user/gestion_RH/userProfil', [
+        $this->renderView('user/gestion_RH/profilUser', [
             'user' => $user
         ]);
     }
@@ -222,6 +222,11 @@ class UserController extends Controller
     public function editUser(){
 
         $this->renderView('user/gestion_RH/editUser');
+                
+    }
+    public function deleteUser(){
+
+        $this->renderView('user/gestion_RH/deleteUser');
                 
     }
     
