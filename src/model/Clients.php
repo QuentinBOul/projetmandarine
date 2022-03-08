@@ -209,7 +209,6 @@ class Clients extends Model
 
 
     // Méthodes récupérations données
-
     public function getAllClients()
     {
         $clients = Dao::getMany(self::class);
@@ -226,8 +225,7 @@ class Clients extends Model
     }
 
 
-    // Méthode ajout données
-    
+    // Méthode ajout données    
     public function setClient()
     {
         Dao::insertOne($this, get_object_vars($this));
@@ -239,4 +237,11 @@ class Clients extends Model
         $id = ['id_client' => intval($_POST['idClient'])];
         Dao::edit(self::class, get_object_vars($this), $id);
     }
-}
+
+    // Méthode delete données
+    public function deleteClient()
+    {
+        Dao::delete(self::class, ['id_client' => intval($_POST['idClient'])]);
+        Dao::delete("contacts", ['id_client' => intval($_POST['idClient'])]);
+    }
+}   

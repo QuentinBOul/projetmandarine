@@ -57,7 +57,7 @@
     </table>
     <div class="text-center">
       <a href="contacts" class="btn btn-secondary mx-3 my-1">Retour</a>
-      <button type="submit" class="btn btn-danger">Modifier</button>
+      <button type="submit" class="btn btn-warning">Modifier</button>
     </div>
   </form>
 </div>

@@ -73,9 +73,33 @@
         </tr>
       </tbody>
     </table>
-    <div class="text-center">
-      <a href="clients" class="btn btn-secondary mx-3 my-1">Retour</a>
-      <button type="submit" class="btn btn-danger">Modifier</button>
+    <div class="text-center m-2">
+      <a href="clients" class="btn btn-secondary">Retour</a>
+      <button type="submit" class="btn btn-warning mx-3">Modifier</button>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer</button>
     </div>
   </form>
+</div>
+
+<!-- Confirmation de suppression -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmez-vous la suppression du client n°<?= htmlspecialchars($client->getId_client()) ?></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <strong>Attention !</strong><br>
+        (La suppression de ce client entrainera celle du contact concerné)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <form action="deleteClient" method="POST">
+          <h2 hidden>ID CLIENT : <input class="text-center" type="text" size="1" name="idClient" value="<?= htmlspecialchars($client->getId_client()) ?>" readonly></h2>
+          <button type="submit" class="btn btn-danger">Confirmer</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

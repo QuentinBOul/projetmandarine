@@ -135,6 +135,14 @@ class UserController extends Controller
         $this->redirectToRoute('clients');
     }
 
+    public function deleteClient()
+    {
+        $client = new Clients();
+        $client->deleteClient();
+
+        $this->redirectToRoute('clients');
+    }
+
 
     //Affichage des contacts
     public function contacts()
