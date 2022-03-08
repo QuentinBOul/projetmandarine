@@ -232,4 +232,11 @@ class Clients extends Model
     {
         Dao::insertOne($this, get_object_vars($this));
     }
+
+    // Méthode edit données
+    public function editClient()
+    {
+        $id = ['id_client' => intval($_POST['idClient'])];
+        Dao::edit(self::class, get_object_vars($this), $id);
+    }
 }

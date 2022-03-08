@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\controller;
 
@@ -10,7 +10,8 @@ use App\model\Contacts;
 class UserController extends Controller
 {
 
-    public function login(){
+    public function login()
+    {
 
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'get') {
             $this->renderView('default/index');
@@ -24,13 +25,12 @@ class UserController extends Controller
                     return;
                 }
                 if ($_POST['password'] == $user->getPassUser()) {
-                    
+
                     $_SESSION['isLogged'] = true;
                     $user->beforeInsertInSession();
                     $_SESSION['user'] = $user;
                     echo '<script type="text/javascript">alert("Vous êtes bien connecté !")</script>';
                     echo "<script>setTimeout(\"location.href = '';\",300);</script>";
-                    
                 } else {
                     $this->renderView('default/index', [
                         'error' => "Mauvais mot de passe !"
@@ -39,34 +39,46 @@ class UserController extends Controller
                 }
             }
         }
-
     }
 
-    public function logout(){
+    public function logout()
+    {
 
         session_destroy();
         $this->redirectToRoute('');
-
     }
-    
-    public function dashboard_com(){
+
+    public function dashboard_com()
+    {
 
         $this->renderView('user/gestion_commerciale/dashboard');
     }
 
-    public function dashboard_project(){
+    public function dashboard_project()
+    {
 
         $this->renderView('user/gestion_projets/dashboard');
     }
 
-    public function dashboard_rh(){
+    public function dashboard_rh()
+    {
 
         $this->renderView('user/gestion_RH/dashboard');
     }
 
 
     //Affichage des clients
-    public function clientProfil(){
+    public function clients()
+    {
+
+        $clients = (new Clients())->getAllClients();
+        $this->renderView('user/gestion_commerciale/clients', [
+            'clients' => $clients
+        ]);
+    }
+
+    public function clientProfil()
+    {
 
         $id = $_GET["clientProfil"];
         $client = (new Clients())->getOneByIdClient($id);
@@ -75,21 +87,14 @@ class UserController extends Controller
         ]);
     }
 
-    public function clients(){
-
-        $clients = (new Clients())->getAllClients();
-        $this->renderView('user/gestion_commerciale/clients', [
-            'clients' => $clients
-        ]);
-    }
-
-    public function formClient(){
+    public function formClient()
+    {
 
         $this->renderView('user/gestion_commerciale/formulaire/formClient');
-        
     }
 
-    public function addClient(){
+    public function addClient()
+    {
 
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newClient = new Clients();
@@ -110,15 +115,39 @@ class UserController extends Controller
         $this->redirectToRoute('clients');
     }
 
-    public function editClient(){
+    public function editClient()
+    {
 
-        $this->renderView('user/gestion_commerciale/edit/editClient');
+        $client = new Clients();
+        $client->setId_sect($_POST['secteur']);
+        $client->setRaison_sociale($_POST['raisonSociale']);
+        $client->setAdresse_client($_POST['adresse']);
+        $client->setCode_postal_client($_POST['codePostal']);
+        $client->setVille_client($_POST['ville']);
+        $client->setCa($_POST['ca']);
+        $client->setEffectif($_POST['effectif']);
+        $client->setTelephone_client($_POST['tel']);
+        $client->setType_client($_POST['type']);
+        $client->setNature_client($_POST['nature']);
+        $client->setCommentaire_client($_POST['com']);
+        $client->editClient();
 
+        $this->redirectToRoute('clients');
     }
 
 
-     //Affichage des contacts
-    public function contactProfil(){
+    //Affichage des contacts
+    public function contacts()
+    {
+
+        $contacts = (new Contacts())->getAllContacts();
+        $this->renderView('user/gestion_commerciale/contacts', [
+            'contacts' => $contacts
+        ]);
+    }
+
+    public function contactProfil()
+    {
 
         $id = $_GET["contactProfil"];
         $contact = (new Contacts())->getOneByIdContact($id);
@@ -127,21 +156,14 @@ class UserController extends Controller
         ]);
     }
 
-    public function contacts(){
-
-        $contacts = (new Contacts())->getAllContacts();
-        $this->renderView('user/gestion_commerciale/contacts', [
-            'contacts' => $contacts
-        ]);
-    }
-
-    public function formContact(){
+    public function formContact()
+    {
 
         $this->renderView('user/gestion_commerciale/formulaire/formContact');
-        
     }
 
-    public function addContact(){
+    public function addContact()
+    {
 
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newContact = new Contacts();
@@ -159,14 +181,25 @@ class UserController extends Controller
         $this->redirectToRoute('contacts');
     }
 
-    public function editContact(){
+    public function editContact()
+    {
 
-        $this->renderView('user/gestion_commerciale/edit/editContact');
-                
+        $contact = new Contacts();
+        $contact->setId_fonc($_POST['idFonction']);
+        $contact->setNom_contact($_POST['nom']);
+        $contact->setPrenom_contact($_POST['prenom']);
+        $contact->setTel_contact($_POST['tel']);
+        $contact->setEmail_contact($_POST['email']);
+        $contact->setPhoto($_POST['photo']);
+        $contact->setDuree($_POST['duree']);
+        $contact->editContact();
+
+        $this->redirectToRoute('contacts');
     }
 
     //Affichage des users
-    public function profilUser(){
+    public function profilUser()
+    {
 
         $id = $_GET["profilUser"];
         $user = (new Users())->getOneUser($id);
@@ -175,7 +208,8 @@ class UserController extends Controller
         ]);
     }
 
-    public function usersList(){
+    public function usersList()
+    {
 
         $users = (new Users())->getAllUsers();
         $this->renderView('user/gestion_RH/usersList', [
@@ -183,13 +217,14 @@ class UserController extends Controller
         ]);
     }
 
-    public function formUser(){
+    public function formUser()
+    {
 
         $this->renderView('user/gestion_RH/formUser');
-        
     }
 
-    public function addUser(){
+    public function addUser()
+    {
 
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newUser = new Users();
@@ -202,66 +237,62 @@ class UserController extends Controller
         $this->redirectToRoute('dashboard3');
     }
 
-    public function editUser(){
+    public function editUser()
+    {
 
         $this->renderView('user/gestion_RH/editUser');
-                
     }
-    public function deleteUser(){
+    public function deleteUser()
+    {
 
         $this->renderView('user/gestion_RH/deleteUser');
-                
     }
 
-    public function areYouDev(){
+    public function areYouDev()
+    {
 
-        if($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'dev'){
+        if ($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'dev') {
 
-                
-                $this->renderView('default/index', [
-                    'error' => "Vous n'êtes pas connecté en temps que developpeur !"
-                ]);
-                $this->login();
 
-            }else{
-            
-                return;
-            
-            } 
+            $this->renderView('default/index', [
+                'error' => "Vous n'êtes pas connecté en temps que developpeur !"
+            ]);
+            $this->login();
+        } else {
+
+            return;
+        }
     }
 
-    public function areYouCom(){
+    public function areYouCom()
+    {
 
-        if($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'com'){
+        if ($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'com') {
 
-                
-                $this->renderView('default/index', [
-                    'error' => "Vous n'êtes pas connecté en temps que commercial !"
-                ]);
-                $this->login();
 
-            }else{
-            
-                return;
-            
-            } 
+            $this->renderView('default/index', [
+                'error' => "Vous n'êtes pas connecté en temps que commercial !"
+            ]);
+            $this->login();
+        } else {
+
+            return;
+        }
     }
 
-    public function areYouRH(){
+    public function areYouRH()
+    {
 
-        if($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'rh'){
+        if ($_SESSION == null || $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() != 'rh') {
 
-                
-                $this->renderView('default/index', [
-                    'error' => "Vous n'êtes pas connecté en temps que RH !"
-                ]);
-                $this->login();
 
-            }else{
-            
-                return;
-            
-            } 
+            $this->renderView('default/index', [
+                'error' => "Vous n'êtes pas connecté en temps que RH !"
+            ]);
+            $this->login();
+        } else {
+
+            return;
+        }
     }
-    
 }

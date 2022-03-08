@@ -8,7 +8,7 @@
         <tr>
           <th scope="row">ID Secteur d'activité :</th>
           <td>
-            <input type="text" class="text-center" size="1" name="idSecteur" value="<?= htmlspecialchars($client->getId_sect()) ?>" readonly>
+            <input type="text" class="text-center" size="1" name="secteur" value="<?= htmlspecialchars($client->getId_sect()) ?>" readonly>
           </td>
         </tr>
         <tr>

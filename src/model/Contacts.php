@@ -158,12 +158,12 @@ class Contacts extends Model
 
 
     // Méthodes récupérations données
-    
     public function getAllContacts()
     {
         $contacts = Dao::getMany(self::class);
         return $contacts;
     }
+
 
     public function getOneByIdContact(int $id_contact)
     {
@@ -176,9 +176,16 @@ class Contacts extends Model
 
     
     // Méthode ajout données
-
     public function setContact()
     {
         Dao::insertOne($this, get_object_vars($this));
+    }
+
+
+    // Méthode edit données
+    public function editContact()
+    {
+        $id = ['id_contact' => intval($_POST['idContact'])];
+        Dao::edit(self::class, get_object_vars($this), $id);
     }
 }
