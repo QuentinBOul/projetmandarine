@@ -41,15 +41,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./">Accueil</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Les Dashboards</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="dashboard1">Dashboard1 (com)</a></li>
-                                <li><a class="dropdown-item" href="dashboard2">Dashboard2 (dev)</a></li>
-                                <li><a class="dropdown-item" href="dashboard3">Dashboard3 (rh)</a></li>
-                            </ul>
-                        </li>
                         <?php
                             if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'com' ){
                             echo '<a class="nav-link active" aria-current="page" href="./dashboard1">Tableau de bord</a>';}
