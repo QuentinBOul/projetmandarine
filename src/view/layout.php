@@ -49,6 +49,9 @@
                             if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'rh' ){
                             echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Tableau de bord</a>';}
                         ?>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./contact">Contact</a>
+                        </li>
                     </ul>
                     <?php
                 if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true ){
