@@ -1,4 +1,14 @@
-<h1 class="text-center m-5">Profil Client</h1>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="card">
+                <div class="card-body text-center" style="background-color: rgba(112, 114, 110, 0.2); box-shadow: 0px 10px 10px rgba(112, 114, 110, 0.8);">
+                    <h5 class="card-title" style="font-size: xx-large">Profil Client</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
   <form action="editClient" method="POST">
