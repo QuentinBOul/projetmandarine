@@ -30,4 +30,15 @@
             </p>
         </div>
     </div>
+
+    <div class="card flex-row article"><img class="card-img-left example-card-img-responsive"
+            src="./public/assets/img/imgartc3.jpg" height="30%" width="30%" />
+        <div class="card-body">
+            <h4 class="card-title h5 h4-sm">Vos retours sur les dernières mesures !</h4>
+            <p class="card-text">Bonjour à tous nos collaborateurs ! Nous avons mis en place dans vos espaces respectifs
+                un questionnaire de satisfaction sur les dernières mesures prises en rapport avec l'entreprise,
+                 nous espérons que vos retours seront positifs ! Bonne journée à tous !
+            </p>
+        </div>
+    </div>
 </div>
