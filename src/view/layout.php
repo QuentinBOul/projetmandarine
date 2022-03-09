@@ -51,11 +51,11 @@
                         </li>
                         <?php
                             if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'com' ){
-                            echo '<a class="nav-link active" aria-current="page" href="./dashboard1">Dashboard</a>';}
+                            echo '<a class="nav-link active" aria-current="page" href="./dashboard1">Tableau de bord</a>';}
                             if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'dev' ){
-                            echo '<a class="nav-link active" aria-current="page" href="./dashboard2">Dashboard</a>';}
+                            echo '<a class="nav-link active" aria-current="page" href="./dashboard2">Tableau de bord</a>';}
                             if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'rh' ){
-                            echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Dashboard</a>';}
+                            echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Tableau de bord</a>';}
                         ?>
                     </ul>
                     <?php
