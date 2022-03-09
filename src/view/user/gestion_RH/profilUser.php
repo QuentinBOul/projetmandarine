@@ -42,9 +42,7 @@
                 </table>
                 <div class="text-center">
                     <button type="submit" class="btn btn-warning mx-3 my-1">Modifier</button>
-                    <a href="deleteUser?id_user=<?= $user->getIdUser() ?>"
-                        class="btn btn-danger mx-3 my-1">Supprimer</a>
-                    <button class="btn btn-danger mx-3 my-1" onClick="deleteMsg(event)">Supprimer TEST</button>
+                    <button class="btn btn-danger mx-3 my-1" onClick="deleteMsg(event)">Supprimer</button>
                 </div>
             </form>
         </div>

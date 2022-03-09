@@ -8,7 +8,7 @@
                 <th>#</th>
                 <th>Login</th>
                 <th>Fonction</th>
-                <th>Fonction</th>
+                <th>Profil</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
                 <td>
                     <div>
                         <form action="<?= "profilUser=" . htmlspecialchars($user->getIdUser()) ?>" method="get">
-                            <button type="submit" class="button btn btn-secondary">></a>
+                            <button type="submit" class="button btn btn-secondary"> Voir le profil</a>
                         </form>
                     </div>
                 </td>
