@@ -24,7 +24,7 @@ class UserController extends Controller
                     ]);
                     return;
                 }
-                if ($_POST['password'] == $user->getPassUser()) {
+                if (password_verify($_POST['password'], $user->getPassUser())  ) {
 
                     $_SESSION['isLogged'] = true;
                     $user->beforeInsertInSession();
@@ -219,7 +219,7 @@ class UserController extends Controller
 
     public function usersList()
     {
-        $this->areYouRH();
+       $this->areYouRH();
         $users = (new Users())->getAllUsers();
         $this->renderView('user/gestion_RH/usersList', [
             'users' => $users
@@ -234,12 +234,12 @@ class UserController extends Controller
 
     public function addUser()
     {
-        $this->areYouRH();
+       $this->areYouRH();
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newUser = new Users();
             $newUser->setRole($_POST['role']);
             $newUser->setLoginUser($_POST['login_user']);
-            $newUser->setPassUser($_POST['pass_user']);
+            $newUser->setPassUser(password_hash($_POST['pass_user'], PASSWORD_DEFAULT));
             $newUser->setUser();
         }
 
@@ -248,11 +248,12 @@ class UserController extends Controller
 
     public function editUser()
     {
+
         $this->areYouRH();
         $user = new Users();
         $user->setRole($_POST['role']);
         $user->setLoginUser($_POST['login_user']);
-        $user->setPassUser($_POST['pass_user']);
+        $user->setPassUser(password_hash($_POST['pass_user'], PASSWORD_DEFAULT));
         $user->editUser();
 
         $this->redirectToRoute('dashboard3');
