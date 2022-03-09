@@ -209,7 +209,7 @@ class UserController extends Controller
     //Affichage des users
     public function profilUser()
     {
-
+        $this->areYouRH();
         $id = $_GET["profilUser"];
         $user = (new Users())->getOneUser($id);
         $this->renderView('user/gestion_RH/profilUser', [
@@ -219,7 +219,7 @@ class UserController extends Controller
 
     public function usersList()
     {
-
+        $this->areYouRH();
         $users = (new Users())->getAllUsers();
         $this->renderView('user/gestion_RH/usersList', [
             'users' => $users
@@ -228,13 +228,13 @@ class UserController extends Controller
 
     public function formUser()
     {
-
+        $this->areYouRH();
         $this->renderView('user/gestion_RH/formUser');
     }
 
     public function addUser()
     {
-
+        $this->areYouRH();
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newUser = new Users();
             $newUser->setRole($_POST['role']);
@@ -248,13 +248,23 @@ class UserController extends Controller
 
     public function editUser()
     {
+        $this->areYouRH();
+        $user = new Users();
+        $user->setRole($_POST['role']);
+        $user->setLoginUser($_POST['login_user']);
+        $user->setPassUser($_POST['pass_user']);
+        $user->editUser();
 
-        $this->renderView('user/gestion_RH/editUser');
+        $this->redirectToRoute('dashboard3');
     }
     public function deleteUser()
     {
-
-        $this->renderView('user/gestion_RH/deleteUser');
+        $this->areYouRH();
+        $user = new Users();
+        $user->deleteUser();
+        
+        $this->redirectToRoute('dashboard3');
+    
     }
 
     public function areYouDev()

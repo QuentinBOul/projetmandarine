@@ -137,4 +137,17 @@ class Users extends Model
         {
             Dao::insertOne($this, get_object_vars($this));
         }
+
+            // Méthode edit données
+        public function editUSer()
+        {
+            $id = ['id_user' => intval($_POST['id_user'])];
+            Dao::edit(self::class, get_object_vars($this), $id);
+        }
+
+        // Méthode delete données
+        public function deleteUser()
+        {
+            Dao::delete("users", ['id_user' => intval($_POST['id_user'])]);
+        }
     }

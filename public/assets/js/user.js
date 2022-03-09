@@ -84,7 +84,7 @@ function deleteMsg(event) {
   var id = document.getElementById("user_id").value;
   swal({
     title: "Etes vous sure?",
-    text: "Une fois supprimer il sera impossible de récupérer les informations!",
+    text: "Une fois supprimmé il sera impossible de récupérer les informations!",
     icon: "warning",
     buttons: true,
     dangerMode: true,
@@ -92,7 +92,7 @@ function deleteMsg(event) {
     if (willDelete) {
       $.ajax({
         url: "deleteUser",
-        type: "GET",
+        type: "POST",
         data: { id_user: id },
         dataType: "text",
         success: function () {
