@@ -1,7 +1,17 @@
-<h1 class="text-center">Ajouter un Contact</h1>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="card">
+                <div class="card-body text-center" style="background-color: rgba(112, 114, 110, 0.2); box-shadow: 0px 10px 10px rgba(112, 114, 110, 0.8);">
+                    <h5 class="card-title" style="font-size: xx-large">Nouveau Contact</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div>
-  <a href="contacts" class="btn btn-secondary mx-5 my-3" style="float: left;">Retour</a>
+  <a href="contacts" class="btn btn-secondary mx-3 my-3" style="float: right;">Retour</a>
 </div>
 
 <div class="container col-md-6 my-5" id="formClient">
@@ -57,6 +67,6 @@
             <label for="duree">Durée</label>
             <input type="number" name="duree" class="form-control" id="duree" required>
         </div>
-        <button type="submit" class="btn btn-primary my-2">Ajouter</button>
+        <button type="submit" class="btn btn-success my-2">Ajouter</button>
     </form>
 </div>
