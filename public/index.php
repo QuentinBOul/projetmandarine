@@ -27,23 +27,28 @@ session_start();
 $router->register('/', '\App\controller\UserController::login');
 $router->register('/logout', '\App\controller\UserController::logout');
 
+
 // Routes Gestion Commerciale
 
 $router->register('/dashboard1', '\App\controller\UserController::dashboard_com');
+// CLIENTS
 $router->register('/clients', '\App\controller\UserController::clients');
-$router->register('/contacts', '\App\controller\UserController::contacts');
 $router->register('/clientProfil='.$id, '\App\controller\UserController::clientProfil');
-$router->register('/contactProfil='.$id, '\App\controller\UserController::contactProfil');
 $router->register('/formClient', '\App\controller\UserController::formClient');
 $router->register('/addClient', '\App\controller\UserController::addClient');
+$router->register('/editClient', '\App\controller\UserController::editClient');
+$router->register('/deleteClient', '\App\controller\UserController::deleteClient');
+// CONTACTS
+$router->register('/contacts', '\App\controller\UserController::contacts');
+$router->register('/contactProfil='.$id, '\App\controller\UserController::contactProfil');
 $router->register('/formContact', '\App\controller\UserController::formContact');
 $router->register('/addContact', '\App\controller\UserController::addContact');
-$router->register('/editClient', '\App\controller\UserController::editClient');
 $router->register('/editContact', '\App\controller\UserController::editContact');
-$router->register('/deleteClient', '\App\controller\UserController::deleteClient');
+
 
 // Routes Gestion des Projets
 $router->register('/dashboard2', '\App\controller\UserController::dashboard_project');
+
 
 // Routes Gestion RH
 $router->register('/dashboard3', '\App\controller\UserController::usersList');
