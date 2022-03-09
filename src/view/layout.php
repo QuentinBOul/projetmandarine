@@ -12,6 +12,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
         defer></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js" defer>
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
@@ -74,15 +75,51 @@
                 </div>
             </div>
         </nav>
+        <hr>
     </header>
-    <hr>
 
     <?= $content ?>
 
-    <!-- <footer class="text-center"
-        style="width: 100%; height: 100px; background-color: gray; position: absolute; bottom: 0;">
-        <h1>footer</h1>
-    </footer> -->
+    <footer class="bg-light text-center text-lg-start">
+        <hr>
+  <!-- Grid container -->
+  <div class="container p-3">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Nous contacter</h5>
+
+        <p><i class="bi-house"></i> 32 rue de la mandarine 35000 Rennes</p>
+        <p><i class="bi-telephone"></i> 06-99-06-46-71</p>
+        <p><i class="bi-envelope"></i> abi@informatique.com</p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">A propos de nous</h5>
+
+        <p>
+        Depuis plus de 10 ans, Active Bretagne Informatique, situé à Rennes, accompagne
+         les entreprises dans le déploiement de leur système informatique et dans le
+          développement d’infrastructure et de réseaux. Quelque soit votre domaine
+           d’activité ou votre taille, nous avons une solution adaptée à votre besoin.
+        </p>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <span class="text-dark">The Mandarine Project</span>
+  </div>
+  <!-- Copyright -->
+</footer>
 
 </body>
 
