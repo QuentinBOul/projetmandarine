@@ -61,7 +61,7 @@
                     </ul>
                     <?php
                 if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true ){
-                    echo '<span id="bjrconnect"> Bienvenue ', $_SESSION['user']->getLoginUser(), '</span>';
+                    echo '<span id="bjrconnect"> Bienvenue <b>', $_SESSION['user']->getLoginUser(), '</b></span>';
                     echo  '<a href="./logout"><button class="btn btn-warning" type="submit">Logout</button></a>';
                 }else{
                     echo '<form class="d-flex" action="" method="post">';
