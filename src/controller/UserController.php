@@ -50,7 +50,7 @@ class UserController extends Controller
 
     public function dashboard_com()
     {
-
+        $this->areYouCom();
         $this->renderView('user/gestion_commerciale/dashboard');
     }
 
@@ -70,7 +70,7 @@ class UserController extends Controller
     //Affichage des clients
     public function clients()
     {
-
+        $this->areYouCom();
         $clients = (new Clients())->getAllClients();
         $this->renderView('user/gestion_commerciale/clients', [
             'clients' => $clients
@@ -79,7 +79,7 @@ class UserController extends Controller
 
     public function clientProfil()
     {
-
+        $this->areYouCom();
         $id = $_GET["clientProfil"];
         $client = (new Clients())->getOneByIdClient($id);
         $this->renderView('user/gestion_commerciale/profil/clientProfil', [
@@ -89,13 +89,13 @@ class UserController extends Controller
 
     public function formClient()
     {
-
+        $this->areYouCom();
         $this->renderView('user/gestion_commerciale/formulaire/formClient');
     }
 
     public function addClient()
     {
-
+        $this->areYouCom();
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newClient = new Clients();
             $newClient->setId_sect($_POST['secteur']);
@@ -117,7 +117,7 @@ class UserController extends Controller
 
     public function editClient()
     {
-
+        $this->areYouCom();
         $client = new Clients();
         $client->setId_sect($_POST['secteur']);
         $client->setRaison_sociale($_POST['raisonSociale']);
@@ -137,6 +137,7 @@ class UserController extends Controller
 
     public function deleteClient()
     {
+        $this->areYouCom();
         $client = new Clients();
         $client->deleteClient();
 
@@ -147,7 +148,7 @@ class UserController extends Controller
     //Affichage des contacts
     public function contacts()
     {
-
+        $this->areYouCom();
         $contacts = (new Contacts())->getAllContacts();
         $this->renderView('user/gestion_commerciale/contacts', [
             'contacts' => $contacts
@@ -156,7 +157,7 @@ class UserController extends Controller
 
     public function contactProfil()
     {
-
+        $this->areYouCom();
         $id = $_GET["contactProfil"];
         $contact = (new Contacts())->getOneByIdContact($id);
         $this->renderView('user/gestion_commerciale/profil/contactProfil', [
@@ -166,13 +167,13 @@ class UserController extends Controller
 
     public function formContact()
     {
-
+        $this->areYouCom();
         $this->renderView('user/gestion_commerciale/formulaire/formContact');
     }
 
     public function addContact()
     {
-
+        $this->areYouCom();
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newContact = new Contacts();
             $newContact->setId_client($_POST['idClient']);
@@ -191,7 +192,7 @@ class UserController extends Controller
 
     public function editContact()
     {
-
+        $this->areYouCom();
         $contact = new Contacts();
         $contact->setId_fonc($_POST['idFonction']);
         $contact->setNom_contact($_POST['nom']);
