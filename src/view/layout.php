@@ -48,12 +48,11 @@
                             echo '<a class="nav-link active" aria-current="page" href="./dashboard2">Tableau de bord</a>';}
                             if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true && $_SESSION['user']->getRole() == 'rh' ){
                             echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Tableau de bord</a>';}
+                            if (isset($_SESSION['user'])){
+                                echo '<a class="nav-link active" aria-current="page" href="./contact">Contact</a>';}
                         ?>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./a_propos">&Agrave; propos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./contact">Contact</a>
                         </li>
                     </ul>
                     <?php
