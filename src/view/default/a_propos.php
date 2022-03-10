@@ -46,7 +46,7 @@
         <div class="col-md-6 text-center">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42622.471463823975!2d-1.723506081684985!3d48.11207858829749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480ede2c327854f5%3A0x1c0ca5d076f41c90!2s35000%20Rennes!5e0!3m2!1sfr!2sfr!4v1646909147545!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <div class="container col-md-6" style="width: 600px;">
+        <div class="container col-md-6">
             <div class="card flex-row article">
                 <div class="card-body h6 mb-0 pb-0">
                     <h5 class="text-center">HORAIRES DE L'ENTREPRISE</h5><br>
