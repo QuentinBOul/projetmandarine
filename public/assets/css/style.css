@@ -21,3 +21,14 @@ footer {
     padding-top: 5%;
     padding-bottom: 5%;
 }
+
+/***** a propos *****/
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.6);
+}

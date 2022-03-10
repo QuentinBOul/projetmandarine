@@ -50,6 +50,9 @@
                             echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Tableau de bord</a>';}
                         ?>
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./a_propos">&Agrave; propos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./contact">Contact</a>
                         </li>
                     </ul>
@@ -108,7 +111,7 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3" style="background-color: rgba(112, 114, 110, 0.2);">
     © 2022 Copyright:
     <span class="text-dark">The Mandarine Project</span>
   </div>
