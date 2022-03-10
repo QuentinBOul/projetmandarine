@@ -66,6 +66,16 @@ class UserController extends Controller
         $this->renderView('user/gestion_RH/dashboard');
     }
 
+    public function aPropos()
+    {
+        $this->renderView('default/a_propos');
+        
+        if (isset($_SESSION['user']) && $_SESSION['isLogged'] == true) {
+            $this->renderView('default/a_propos');            
+        }
+        $this->login();
+    }
+
 
     //Affichage des clients
     public function clients()
@@ -219,7 +229,7 @@ class UserController extends Controller
 
     public function usersList()
     {
-       $this->areYouRH();
+        $this->areYouRH();
         $users = (new Users())->getAllUsers();
         $this->renderView('user/gestion_RH/usersList', [
             'users' => $users
@@ -234,7 +244,7 @@ class UserController extends Controller
 
     public function addUser()
     {
-       $this->areYouRH();
+        $this->areYouRH();
         if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
             $newUser = new Users();
             $newUser->setRole($_POST['role']);
@@ -263,9 +273,8 @@ class UserController extends Controller
         $this->areYouRH();
         $user = new Users();
         $user->deleteUser();
-        
+
         $this->redirectToRoute('dashboard3');
-    
     }
 
     public function areYouDev()

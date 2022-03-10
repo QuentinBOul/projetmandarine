@@ -50,6 +50,9 @@
                             echo '<a class="nav-link active" aria-current="page" href="./dashboard3">Tableau de bord</a>';}
                         ?>
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./a_propos">&Agrave; propos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./contact">Contact</a>
                         </li>
                     </ul>

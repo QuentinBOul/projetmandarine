@@ -27,6 +27,7 @@ session_start();
 $router->register('/', '\App\controller\UserController::login');
 $router->register('/logout', '\App\controller\UserController::logout');
 $router->register('/contact', '\App\controller\MessageController::indexmsg');
+$router->register('/a_propos', '\App\controller\UserController::aPropos');
 
 
 // Routes Gestion Commerciale
