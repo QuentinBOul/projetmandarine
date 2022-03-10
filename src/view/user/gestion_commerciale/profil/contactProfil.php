@@ -66,7 +66,7 @@
       </tbody>
     </table>
     <div class="text-center">
-      <a href="contacts" class="btn btn-secondary mx-3 my-1">Retour</a>
+      <a href="contacts" class="btn btn-secondary mx-3 my-1"><i class="bi bi-backspace"></i></a>
       <button type="submit" class="btn btn-warning">Modifier</button>
     </div>
   </form>

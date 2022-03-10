@@ -11,7 +11,7 @@
 </div>
 
 <div>
-    <a href="dashboard1" class="btn btn-secondary mx-3 my-2" style="float: right;">Retour</a>
+    <a href="dashboard1" class="btn btn-secondary mx-3 my-2" style="float: right;"><i class="bi bi-backspace"></i></a>
 </div>
 <div>
     <a href="formClient" class="btn btn-success mx-3" style="float:right;">Ajouter un client</a>
@@ -39,7 +39,7 @@
                     <td><?= htmlspecialchars($client->getVille_client()) ?></td>
                     <td>
                         <form action="<?= "clientProfil=" . htmlspecialchars($client->getId_client()) ?>" method="get">
-                            <button type="submit" class="button btn btn-secondary">></a>
+                            <button type="submit" class="button btn btn-secondary"><i class="bi bi-eye"></i></a>
                         </form>
                     </td>
                 </tr>

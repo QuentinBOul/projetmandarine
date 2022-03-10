@@ -84,7 +84,7 @@
       </tbody>
     </table>
     <div class="text-center m-2">
-      <a href="clients" class="btn btn-secondary">Retour</a>
+      <a href="clients" class="btn btn-secondary"><i class="bi bi-backspace"></i></a>
       <button type="submit" class="btn btn-warning mx-3">Modifier</button>
       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer</button>
     </div>

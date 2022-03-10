@@ -11,7 +11,7 @@
 </div>
 
 <div>
-  <a href="contacts" class="btn btn-secondary mx-3 my-3" style="float: right;">Retour</a>
+  <a href="contacts" class="btn btn-secondary mx-3 my-3" style="float: right;"><i class="bi bi-backspace"></i></a>
 </div>
 
 <div class="container col-md-6 my-5" id="formClient">
