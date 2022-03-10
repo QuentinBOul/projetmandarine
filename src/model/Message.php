@@ -25,7 +25,6 @@ class Message extends Model
      */
     public function setEmail($email): void
     {
-        // vérification de la squelette d'une adresse mail
         $this->email = $email;
     }
 
@@ -42,8 +41,6 @@ class Message extends Model
      */
     public function setFirstName($firstName): void
     {
-        if (strlen($firstName) <= 2)
-            throw new \Exception("First Name <2 ");
         $this->firstName = $firstName;
     }
 
