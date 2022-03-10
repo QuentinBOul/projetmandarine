@@ -6,11 +6,20 @@ use App\model\Message;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use App\model\Users;
 
 class MessageController extends \App\core\Controller
 {
     public function indexmsg()
     {
+        if ($_SESSION == null) {
+
+
+            $this->renderView('default/index', [
+                'error' => "Vous devez être connecté pour accèder à cette page !"
+            ]);
+            $this->login();
+        } else {
         if (strtolower($_SERVER['REQUEST_METHOD']) == "post")
         {
             $message = new Message();
@@ -49,12 +58,46 @@ class MessageController extends \App\core\Controller
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();
-                echo `<script language="Javascript">Swal.fire('Votre message a bien été envoyé !')</script>`;
+                echo '<script type="text/javascript">alert("Votre message a bien été envoyé !")</script>';
+                    echo "<script>setTimeout(\"location.href = '';\",300);</script>";
             } catch (Exception $e) {
-                dd("Message could not be sent. Mailer Error: {$mail->ErrorInfo}") ;
+                echo '<script type="text/javascript">alert("Votre message n\'a pas pu être envoyé !")</script>';
+                    echo "<script>setTimeout(\"location.href = '';\",300);</script>";
             }
-
+        
         }
         $this->renderView("contact/contact");
+    }
+    }
+
+    public function login()
+    {
+
+        if (strtolower($_SERVER['REQUEST_METHOD']) == 'get') {
+            $this->renderView('default/index');
+        } elseif (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+            if (isset($_POST['username']) && isset($_POST['password'])) {
+                $user = (new Users())->getOneByUsername($_POST['username']);
+                if (is_null($user)) {
+                    $this->renderView('default/index', [
+                        'error' => "L'utilisateur n'existe pas"
+                    ]);
+                    return;
+                }
+                if (password_verify($_POST['password'], $user->getPassUser())  ) {
+
+                    $_SESSION['isLogged'] = true;
+                    $user->beforeInsertInSession();
+                    $_SESSION['user'] = $user;
+                    echo '<script type="text/javascript">alert("Vous êtes bien connecté !")</script>';
+                    echo "<script>setTimeout(\"location.href = '';\",300);</script>";
+                } else {
+                    $this->renderView('default/index', [
+                        'error' => "Mauvais mot de passe !"
+                    ]);
+                    return;
+                }
+            }
+        }
     }
 }
